@@ -1,0 +1,40 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+    <title>crud.html</title>
+	
+    <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+    <meta http-equiv="description" content="this is my page">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <link rel="stylesheet" type="text/css" href="themes/default/easyui.css">
+	<link rel="stylesheet" type="text/css" href="themes/icon.css">
+	<script type="text/javascript" src="jquery.min.js"></script>
+	<script type="text/javascript" src="jquery.easyui.min.js"></script>
+    <script type="text/javascript">
+        function sexFormatter(value,row,index){
+           if(value==1){
+		      return '男';
+		    }else{
+		      return '女';
+		    }
+        }
+    
+    </script>
+  </head>
+  
+  <body>
+    <table class="easyui-datagrid" title="Basic DataGrid" style="width:700px;height:250px"
+			data-options="singleSelect:false,collapsible:false,url:'queryStudent',method:'get',pagination:true,rownumbers:true">
+		<thead>
+			<tr>
+			    <!-- {"sid":1,"sname":"张三2号","gid":1,"sex":1,"age":12,"address":"深圳福田"} -->
+				<th data-options="field:'sid',width:80">学生编号</th>
+				<th data-options="field:'sname',width:100">学生姓名</th>
+				<th data-options="field:'sex',width:80,align:'right',formatter:sexFormatter">性别</th>
+				<th data-options="field:'age',width:80,align:'right'">年龄</th>
+				<th data-options="field:'address',width:250">地址</th>
+			</tr>
+		</thead>
+	</table>
+  </body>
+</html>
